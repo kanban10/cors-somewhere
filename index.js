@@ -20,11 +20,16 @@ app.get('/', (req, res) => {
   })
 
 app.get('/image', (req, res) => {
-    var url = req.query.url
+    // console.log('start req')
+    // console.log(req.query.url)
+    // console.log(encodeURI(req.query.url))
+    var url = encodeURI(req.query.url)
     request( {url: url, encoding: null}, (err, response, body) => {
         if(err) {
+          // console.log(url)
             res.status(500).send(err);
         } else {
+          // console.log(url)
             res.send(body);
         }
     });
