@@ -10,6 +10,15 @@ app.use(function(req, res, next) {
     next();
 });
 
+app.get('/', (req, res) => {
+    res.send({
+      status: 'success',
+      response: '',
+    },
+      200,
+    )
+  })
+
 app.get('/image', (req, res) => {
     var url = req.query.url
     request( {url: url, encoding: null}, (err, response, body) => {
