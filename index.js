@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const request = require('request');
-const axios = require('axios')
 
 app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*'); //หรือใส่แค่เฉพาะ domain ที่ต้องการได้
